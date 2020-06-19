@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.rawgit.com/duroty/responsive/master/app.embed.js"></script>
+</head>
+<body>
+ <style>
+/* COLORES */
+    .blanco {
+        background-color: #ffffff;
+    }
+    .negro {
+        background-color: #000000;
+        color:#ffffff;
+    }
+    .gris {
+        background-color: #eeeeee;
+    }
+    .gris-blanco {
+        background-color: #f8f8f8;
+    }
+    .azul {
+        /*background-color: #7ed5ff;*/
+        background-color: #a2d6f7;
+    }
+    .verde {
+        background-color: #b3dad5;
+    }
+    .salmon {
+        /*background-color: #ff9797;*/
+        background-color: #f7bebe;
+    }
+    .naranja {
+        background-color: #ffb25f;
+    }
+    .proteccion {
+        background-color: #68b4ef;
+    }
+    .mascarilla {
+        background-color: #66cccc;
+    }
+    .reuniones {
+        background-color: #ff9797;
+    }
+/* NEGRITA */
+     .negrita {
+         font-weight: 700;
+     }
+/* SOMBRAS */
+     .sombra-blanca {
+         text-shadow: 2px 2px 0px #ffffff;
+     }
+     .sombra-oscura {
+         box-shadow: 2px 2px 0px #dddddd;
+     }
+/* BOTÓN, FILETE DE FOTO Y SEPARADORES DE PASOS */
+    .boton{
+        background-color: #eeeeee;
+        border-radius: 25px;
+        color:#000000!important;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .boton:hover{
+        background-color: #999999;
+        color:#ffffff!important;
+    }
+    .filete{
+        border: solid 2px #cccccc;
+    }
+     .separador-lateral {
+        border-right: dotted 1px #999999;
+     }
+     .separador-inferior{
+        border-bottom: 0;
+     }
+/*SCROLL SUAVE NATIVO CSS */
+html {
+	scroll-behavior: smooth;
+}
+/* ELEMENTOS */
+    .contenedor-pasos {
+        color: #000000;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        text-align: center;
+        vertical-align: top;
+    }
+    .cabecera-pasos, .pie-pasos {
+        margin: 0 0 20px 0;
+        padding:15px 10px;
+    }
+    .contenedor-pasos ul, li, h1, h2 {
+        margin:0;
+        padding:0;
+    }
+    .contenedor-pasos ul{
+        list-style: none;
+    }
+    .cabecera-pasos .titulo {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 26px;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    .cabecera-pasos .subtitulo {
+        display: block;
+        font-size: 20px;
+        line-height: 22px;
+        margin: 5px 0 0 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    .cabecera-pasos .menu {
+        display: none;
+        /*display: block;*/
+        margin:8px 0 0 0;
+    }
+    .cabecera-pasos .item-menu {
+        border-right: solid 1px #cccccc;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 5px 0;
+        padding: 0 10px;
+    }
+    .cabecera-pasos .item-menu:last-child {
+        border-right: none;
+    }
+    .cabecera-pasos .item-menu a {
+        color:#999999;
+        text-decoration: none;
+    }
+    .cabecera-pasos .item-menu a:hover{
+        color:#000000;
+    }
+    .cabecera-pasos .anchor-menu {
+        height:0;
+        width:0;
+        margin:0;
+        padding:0;
+    }
+    .cuerpo-pasos .categoria {
+        display: block;
+        /*display:none;*/
+        margin: 0 0 25px 0;
+        padding: 10px 15px;
+        text-align: center;
+    }
+    .cuerpo-pasos .categoria:first-child {
+        margin-top: 20px;
+    }
+    .cuerpo-pasos .titulo-categoria {
+        color:#ffffff;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    .cuerpo-pasos .anchor-volver {
+        color:#ffffff;
+        /*color:#cccccc;*/
+        /*display:none;*/
+        display: inline-block;
+        float: right;
+        margin: 0;
+        padding:0;
+        text-decoration: none;
+    }
+    /*.cuerpo-pasos .anchor-volver:hover{
+        color:#ffffff;*/
+    }
+    .cuerpo-pasos .anchor-categoria {
+        height:0;
+        width:0;
+        margin:0;
+        padding:0;
+    }
+    .flecha {
+        border: solid #999999;
+        border-width: 0 1.5px 1.5px 0;
+        display: none;
+        /*display: inline-block;*/
+        float: right;
+        margin: 8px 0 0 8px;
+        padding: 5px;
+     }
+    .arriba {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+     }
+    .cuerpo-pasos .subtitulo {
+        border-bottom: dotted 1px #cccccc;
+        display: block;
+        font-size: 17px;
+        line-height: 22px;
+        margin: 0 0 25px 0;
+        padding: 0 10px 25px 0;
+    }
+    .cuerpo-pasos .paso {
+        display: inline-block;
+        margin: 0 0 30px 0;
+        overflow: hidden;
+        padding: 0 10px;    
+        text-align: center;
+        vertical-align: top;
+        width:42%;
+    }
+    .paso .imagen-paso {
+        border-radius:100px;
+        display: inline-block;
+        float: inherit;
+        margin: 0 0 18px 0;
+        overflow: hidden;
+        padding: 0;
+        width: 150px;
+    }     
+    .paso .textos-paso {
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+    .textos-paso .nombre {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 22px;
+        margin: 0 0 6px 0;
+        /*text-transform: uppercase;*/
+        text-shadow: 2px 2px 0px #ffffff;
+    }
+    .textos-paso .texto {
+        display: block;
+        font-size: 17px;
+        line-height: 21px;
+        margin: 0 0 8px 0;
+        text-shadow: 2px 2px 0px #ffffff;
+    }
+    .textos-paso .enlace {
+        color:#999999;
+        display: none;
+        /*display: inline-block;*/
+        margin: 2px 0 18px 0;
+        text-decoration: none;
+    }
+    .textos-paso .enlace:hover{
+        color:#000000;
+    }
+    .pie-pasos .logo-vanguardia {
+        display: inline-block;
+        margin:0 6px 0 0;       
+     }
+    .pie-pasos .fuente {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        margin:0;
+        padding:0;
+        vertical-align: text-top;
+    }
+/* MEDIA QUERIES */
+@media screen and (max-width: 540px){
+    .cuerpo-pasos .paso {
+        display: block;
+        margin: 0 0 18px 0;
+        overflow: hidden;
+        padding: 0;    
+        text-align: left;
+        vertical-align: top;
+        width: 100%;
+    }
+     .separador-lateral{
+        border-right: 0;
+     }
+     .separador-inferior{
+        border-bottom: dotted 1px #cccccc;
+     }
+    .paso .imagen-paso {
+        border-radius:100px;
+        display: inline-block;
+        float: left;
+        margin: 0 15px 18px 10px;
+        overflow: hidden;
+        padding: 0;
+        width: 110px;
+    }
+    .textos-paso .nombre {
+        margin: 8px 0 6px 0;
+    }
+    .textos-paso .texto {
+        margin: 0 10px 20px 0;
+    }
+}
+@media screen and (max-width: 425px){
+    .cuerpo-pasos .anchor-volver {
+        display: none;
+    }
+    .flecha {
+        border: solid #999999;
+        border-width: 0 2px 2px 0;
+        display: none;
+        float: right;
+        margin: 8px 0 0 8px;
+        padding: 5px;
+     }
+    /*.cuerpo-pasos .paso:nth-child(odd) {
+        padding: 0 0 5px 0;   
+    }
+    .cuerpo-pasos .paso:nth-child(even) {
+        padding: 0 0 3px 0;   
+    }*/
+    .textos-paso .nombre {
+        font-size: 20px;
+        line-height: 22px;
+        margin: 8px 0;
+        padding: 0 5px 0 0;
+    }
+    .textos-paso .texto {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 20px 0;
+        padding: 0 5px 0 0;
+    }
+}
+@media screen and (max-width: 385px){
+    .textos-paso .nombre {
+        margin: 0 0 6px 0;
+        padding: 0 5px 0 0;
+    }
+    .textos-paso .texto {
+        margin: 0 0 20px 0;
+        padding: 0 5px 0 0;
+    }
+}
+@media screen and (max-width: 330px){
+    .cabecera-pasos .item-menu {
+        border-right: none;
+        border-bottom: solid 1px #cccccc;
+        margin: 0 10px 5px 10px;
+        padding: 10px 0 15px 0;
+    }
+    .cabecera-pasos .item-menu:last-child {
+        border-bottom: none;
+        margin: 0 10px;
+    }
+    .pie-pasos .fuente {
+        margin:5px 0 0 0;
+    }
+}
+</style>
+<div class="contenedor-pasos">
+    <div class="cabecera-pasos gris">
+        <h1 class="titulo">Catalunya entra en la fase de la autorresponsabilidad</h1>
+        <!--<span class="subtitulo">Para evitar el contagio del Coronavirus</span>-->
+        <a class="anchor-menu" id="menu-pasos"></a>
+        <ul class="menu">
+            <li class="item-menu">
+                <a href="#proteccion" title="item-menu" alt="item-menu" target="_parent">Deberes de protección de la ciudadanía</a>
+            </li>
+            <li class="item-menu">
+                <a href="#mascarilla" title="item-menu" alt="item-menu" target="_parent">Uso de mascarilla</a>
+            </li>
+            <li class="item-menu">
+                <a href="#reuniones" title="item-menu" alt="item-menu" target="_parent">Reuniones, actividades sociales y ocio</a>
+            </li>
+        </ul>
+    </div>
+    <ul class="cuerpo-pasos gris-blanco">
+        <a class="anchor-categoria" id="proteccion"></a>
+        <li class="categoria proteccion">
+            <h2 class="titulo-categoria">Deberes de protección de la ciudadanía</h2>
+            <!--<a class="anchor-volver" href="#menu-pasos"></a>-->
+        </li>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-1-1.png" title="Higiene frecuente de manos" alt="Higiene frecuente de manos"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Higiene frecuente de manos</h2>
+                <!--<span class="texto">Aplicar una cantidad suficiente de jabón</span>-->
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-2-1.png" title="Evitar toser directamente al aire" alt="Evitar toser directamente al aire"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Evitar toser directamente al aire</h2>
+                <span class="texto">Taparse la boca y la cara con la parte interna del antebrazo. Evitar tocarse la cara, nariz y ojos.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-3.png" title="Mantener grupos de convivencia habitual" alt="Mantener grupos de convivencia habitual"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Mantener grupos de convivencia habitual</h2>
+                <span class="texto">Y lo más estables posibles.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-4-1.png" title="Minimizar los contactos diarios" alt="Minimizar los contactos diarios"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Minimizar los contactos diarios</h2>
+                <span class="texto">Para evitar cadenas de transmisión.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>  
+            </div>
+        </li>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-5.png" title="Mantener la distancia física interpersonal de seguridad" alt="Mantener la distancia física interpersonal de seguridad"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Mantener la distancia física interpersonal de seguridad</h2>
+                <span class="texto">De 1,5 m, tanto en espacios cerrados como al aire libre.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a> 
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-6.png" title="Uso de la mascarilla" alt="Uso de la mascarilla"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Uso de la mascarilla</h2>
+                <span class="texto">Cuando no sea posible mantener la distancia física interpersonal.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>   
+            </div>
+        </li>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-7.png" title="Preferencia por los espacios al aire libre" alt="Preferencia por los espacios al aire libre"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Preferencia por los espacios al aire libre</h2>
+                <span class="texto">Para realizar actividades.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-8.png" title="Ventilación correcta" alt="Ventilación correcta"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Ventilación correcta</h2>
+                <span class="texto">De los espacios cerrados.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-9.png" title="Limpieza y desinfección" alt="Limpieza y desinfección"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Limpieza y desinfección</h2>
+                <span class="texto">De las superficies.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-10.png" title="Las personas que presenten síntomas" alt="Las personas que presenten síntomas"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Las personas que presenten síntomas</h2>
+                <span class="texto">Compatibles con la Covid-19, han de contactar con el sistema de salud público...</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/proteccion-ciudadania-11.png" title="...Y deben aislarse en su domicilio" alt="...Y deben aislarse en su domicilio"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">...Y deben aislarse en su domicilio</h2>
+                <span class="texto">Según los protocolos sanitarios, tanto ellas como sus contactos estrechos.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="categoria mascarilla">
+            <h2 class="titulo-categoria">Uso de mascarilla</h2>
+            <i class="flecha arriba"></i>
+            <!--<a class="anchor-volver" href="#menu-pasos" target="_parent"></a>-->
+        </li>
+        <a class="anchor-categoria" id="mascarilla"></a>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/mascarilla-1.png" title="En espacios al aire libre y en cualquier espacio público cerrado" alt="En espacios al aire libre y en cualquier espacio público cerrado"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">En espacios al aire libre y en cualquier espacio público cerrado</h2>
+                <span class="texto">Si no se puede mantener la distancia de seguridad.</span>
+                <a class="enlace" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/mascarilla-2-1.png" title="En todos los medios de transporte terrestre" alt="En todos los medios de transporte terrestre"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">En todos los medios de transporte terrestre</h2>
+                <span class="texto">Excepto en turismos ocupados por personas que mantienen contacto cercano habitual.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>  
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/mascarilla-3.png" title="En un barco, no es necesario usarla" alt="En un barco, no es necesario usarla"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">En un barco, no es necesario usarla</h2>
+                <span class="texto">Si se mantiene la distancia de seguridad de 1,5 m.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/mascarilla-4-1.png" title="No se exige a personas con problemas" alt="No se exige a personas con problemas"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">No se exige a personas con problemas</h2>
+                <span class="texto">Que hagan inviable su uso o para actividades físicas al aire libre u otras actividades incompatibles.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="categoria reuniones">
+            <h2 class="titulo-categoria">Reuniones, actividades sociales y ocio</h2>
+            <i class="flecha arriba"></i>
+            <!--<a class="anchor-volver" href="#menu-pasos" target="_parent"></a>-->
+        </li>
+        <a class="anchor-categoria" id="reuniones"></a>
+        <span class="subtitulo">Todas las actividades abiertas al público han de garantizar la <span class="negrita">distancia interpersonal, sistemas de limpieza de manos, superficies desinfectadas y la ventilación del establecimiento.</span></span>
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/reuniones-1.png" title="Aforo máximo en lugares cerrados" alt="Aforo máximo en lugares cerrados"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Aforo máximo en lugares cerrados</h2>
+                <span class="texto">1.000 personas o 2.000 con asientos preasignados. <span class="negrita">Hasta el 25 de junio</span>.</span>
+                <a class="enlace" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/reuniones-2.png" title="Aforo máximo al aire libre" alt="Aforo máximo al aire libre"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Aforo máximo al aire libre</h2>
+                <span class="texto">2.000 personas o 3.000 con asientos preasignados. <span class="negrita">Hasta el 25 de junio</span>.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li> 
+        <li class="paso separador-inferior separador-lateral">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/reuniones-3.png" title="Accesos de entrada y salida separados" alt="Accesos de entrada y salida separados"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Accesos de entrada y salida separados</h2>
+                <span class="texto">Y controles para evitar aglomeraciones.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso separador-inferior">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/reuniones-4.png" title="Se pueden celebrar reuniones familiares" alt="Se pueden celebrar reuniones familiares"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Se pueden celebrar reuniones familiares</h2>
+                <span class="texto">Y actividades sociales o deportivas sin generar aglomeraciones.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <li class="paso">
+            <img class="imagen-paso blanco sombra-oscura" src="https://lostsightsblog.files.wordpress.com/2020/06/reuniones-5.png" title="Se considera aglomeración" alt="Se considera aglomeración"/>
+            <div class="textos-paso">
+                <h2 class="nombre negrita">Se considera aglomeración</h2>
+                <span class="texto">Un grupo de personas en el que no se mantiene la distancia de seguridad.</span>
+                <a class="enlace boton" href="#" title="Ver perfil" alt="Ver perfil" target="_parent">Ver perfil</a>
+            </div>
+        </li>
+        <a class="anchor-categoria" id="3"></a>
+    </ul>
+    <div class="pie-pasos gris">
+        <img class="logo-vanguardia" src="https://lostsightsblog.files.wordpress.com/2019/03/logo-lv-131x20.png" title="La Vanguardia" alt="La Vanguardia" />
+        <span class="fuente">Fuente: <b>Generalitat de Catalunya.</b></span>
+    </div>
+</div>
+<!-- SCROLL SUAVE JQUERY
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script> -->
+<!-- SCROLL SUAVE CON SMOOTH SCROLL -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js">
+</script>
+<script>
+const scroll = new SmoothScroll('a[href*="#"]', {speed:200, speedAsDuration: true});
+</script>
+</body>
