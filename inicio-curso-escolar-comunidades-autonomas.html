@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.rawgit.com/duroty/responsive/master/app.embed.js"></script>
+</head>
+<body>
+ <style>
+/* COLORES */
+    .blanco {
+        background-color: #ffffff;
+    }
+    .negro {
+        background-color: #000000;
+        color:#ffffff;
+    }
+    .gris {
+        background-color: #eeeeee;
+    }
+    .gris-blanco {
+        background-color: #f8f8f8;
+    }
+    .azul {
+        background-color: #7ed5ff;
+    }
+    .verde {
+        background-color: #b3dad5;
+    }
+    .salmon {
+        background-color: #ff9797;
+    }
+    .naranja {
+        background-color: #ffb25f;
+    }
+    .agua-jabon {
+        background-color: #68b4ef;
+    }
+    .gel {
+        background-color: #66cccc;
+    }
+/* NEGRITA */
+     .negrita {
+         font-weight: 700;
+     }
+/* SOMBRA BLANCA */
+     .sombra-blanca {
+         text-shadow: 2px 2px 0px #ffffff;
+     }
+/* BOTÓN, FILETE DE FOTO Y SEPARADORES DE COMUNIDADES */
+    .boton{
+        background-color: #bbbbbb;
+        border-radius: 25px;
+        color:#ffffff!important;
+        cursor: default;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    /*.boton:hover{
+        background-color: #999999;
+        color:#ffffff!important;
+    }*/
+    .filete{
+        border: solid 2px #cccccc;
+    }
+     .separador-lateral {
+        border-right: dotted 1px #999999;
+     }
+     .separador-inferior{
+        border-bottom: 0;
+     }
+/*SCROLL SUAVE NATIVO CSS */
+html {
+	scroll-behavior: smooth;
+}
+/* ELEMENTOS */
+    .contenedor-comunidades {
+        color: #000000;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        text-align: center;
+        vertical-align: top;
+    }
+    .cabecera-comunidades, .pie-comunidades {
+        margin: 0 0 10px 0;
+        padding:15px 10px;
+    }
+    .pie-comunidades {
+        margin: 10px 0 0 0;
+    }
+    .contenedor-comunidades ul, li, h1, h2 {
+        margin:0;
+        padding:0;
+    }
+    .contenedor-comunidades ul{
+        list-style: none;
+        padding-top: 25px;
+    }
+    .cabecera-comunidades .titulo {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    .cabecera-comunidades .subtitulo {
+        display: block;
+        font-size: 20px;
+        line-height: 22px;
+        margin: 5px 0 0 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    .cuerpo-comunidades .comunidad {
+        display: inline-block;
+        margin: 0 0 25px 0;
+        overflow: hidden;
+        padding: 0 10px;    
+        text-align: center;
+        vertical-align: top;
+        width:42%;
+    }
+    .comunidad .imagen-comunidad {
+        border: solid 1px #dddddd;
+        border-radius:100px;
+        display: inline-block;
+        float: inherit;
+        margin: 0 0 6px 0;
+        overflow: hidden;
+        padding: 0;
+        width: 100px;
+    }     
+    .comunidad .textos-comunidad {
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+    .textos-comunidad .fecha {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0px 0 12px 0;
+        text-shadow: 2px 2px 0px #ffffff;
+        text-transform: uppercase;
+    }
+    .textos-comunidad .texto {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0;
+        text-shadow: 2px 2px 0px #ffffff;
+        text-transform: uppercase;
+    }
+    .textos-comunidad .enlace {
+        color:#999999;
+        display: inline-block;
+        /*display: inline-block;*/
+        margin: 2px 0 14px 0;
+        text-decoration: none;
+    }
+    .textos-comunidad .enlace:hover{
+        color:#000000;
+    }
+    .pie-comunidades .logo-vanguardia {
+        display: inline-block;
+        margin:0 6px 0 0;       
+     }
+    .pie-comunidades .fuente {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        margin:0;
+        padding:0;
+        vertical-align: text-top;
+    }
+/* MEDIA QUERIES */
+@media screen and (max-width: 425px){
+    .contenedor-comunidades ul{
+        padding-top: 20px;
+    }
+    .cuerpo-comunidades .comunidad {
+        display: block;
+        margin: 0 0 18px 0;
+        overflow: hidden;
+        padding: 0 0 10px 0;    
+        text-align: left;
+        vertical-align: top;
+        width: 100%;
+    }
+    .cuerpo-comunidades .comunidad:last-child {
+        margin: 0 0 5px 0;
+    }
+     .separador-lateral{
+        border-right: 0;
+     }
+     .separador-inferior{
+        border-bottom: dotted 1px #cccccc;
+     }
+    .comunidad .imagen-comunidad {
+        border-radius:100px;
+        display: inline-block;
+        float: left;
+        margin: 0 15px 18px 10px;
+        overflow: hidden;
+        width: 100px;
+    }
+    .textos-comunidad .fecha {
+        margin: 0px 0 12px 0;
+    }
+    .textos-comunidad .texto {
+        margin: 0;
+    }
+    .pie-comunidades .fuente {
+        margin:5px 0 0 0;
+    }
+}
+@media screen and (max-width: 375px){
+    .textos-comunidad .fecha {
+        margin: 0px 0 12px 0;
+    }
+    .textos-comunidad .texto {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 330px){
+    .textos-comunidad .fecha {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0px 10px 12px 0;
+    }
+    .textos-comunidad .texto {
+        margin: 0 10px 0 0;
+    }
+}
+</style>
+<div class="contenedor-comunidades">
+    <div class="cabecera-comunidades gris">
+        <h1 class="titulo">Curso escolar 2020-2021</h1>
+        <span class="subtitulo">Fechas de inicio y fin, por comunidades autónomas</span>
+    </div>
+    <ul class="cuerpo-comunidades gris-blanco">
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/andalucia.png" title="Andalucía" alt="Andalucía"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Andalucía</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">10 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">15 Sep - 22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/aragon.png" title="Aragón" alt="Aragón"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Aragón</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7/8 Sep - 18 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">8/10 Sep - 22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/asturias.png" title="Asturias" alt="Asturias"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Asturias</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">10 Sep - 21 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">14 Sep - 23 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/baleares.png" title="Baleares" alt="Baleares"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Baleares</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">10 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">10 Sep - 22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/canarias.png" title="Canarias" alt="Canarias"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Canarias</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">15 Sep - 23 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">16 Sep - 23 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/cantabria.png" title="Cantabria" alt="Cantabria"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Cantabria</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">10 Sep - 25 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/castilla-la-mancha.png" title="Castilla - La Mancha" alt="Castilla - La Mancha"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Castilla - La Mancha</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">9 Sep - 18 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">9 Sep - 18 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/castilla-y-leon.png" title="Enjuagarse las manos con agua" alt="Enjuagarse las manos con agua"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Castilla y León</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">9 Sep - 23 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">14 Sep - 23 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/catalunya.png" title="Catalunya" alt="Catalunya"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Catalunya</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">14 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">14 Sep - 22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/com.valenciana.png" title="Comunitat Valenciana" alt="Comunitat Valenciana"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">C. Valenciana</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7 Sep - 23 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">7 Sep - 23 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/extremadura.png" title="Extremadura" alt="Extremadura"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Extremadura</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">10 Sep - 18 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">10/11 Sep - 18 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/galicia.png" title="Galicia" alt="Galicia"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Galicia</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">10 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">16 Sep - 22 Jun</h2>
+            </div>
+        </li>  
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/rioja.png" title="La Rioja" alt="La Rioja"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">La Rioja</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">7 Sep - 22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/madrid.png" title="Madrid" alt="Madrid"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Madrid</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">8 Sep - 22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">9 Sep - 23 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior separador-lateral">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/murcia.png" title="Murcia" alt="Murcia"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Murcia</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7/10 Sep - 17/25 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">10/18 Sep - 16/24 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad separador-inferior">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/navarra.png" title="Navarra" alt="Navarra"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">Navarra</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">4/7 Sep - 22/22 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">4/7 Sep - 22/22 Jun</h2>
+            </div>
+        </li>
+        <li class="comunidad">
+            <img class="imagen-comunidad blanco" src="https://lostsightsblog.files.wordpress.com/2020/09/pais-vasco.png" title="País Vasco" alt="País Vasco"/>
+            <div class="textos-comunidad">
+                <a class="enlace boton" href="#" title="" alt="" target="_parent">País Vasco</a>
+                <span class="texto">Infantil y primaria</span>
+                <h2 class="fecha negrita">7 Sep - 18 Jun</h2>
+                <span class="texto">Eso y bachillerato</span>
+                <h2 class="fecha negrita">7 Sep - 18 Jun</h2>
+            </div>
+        </li>
+    </ul>
+    <div class="pie-comunidades gris">
+        <img class="logo-vanguardia" src="https://lostsightsblog.files.wordpress.com/2019/03/logo-lv-131x20.png" title="La Vanguardia" alt="La Vanguardia" />
+        <span class="fuente">Fuente: <b>Elaboración propia LV.</b></span>
+    </div>
+</div>
+<!-- SCROLL SUAVE CON SMOOTH SCROLL -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js">
+</script>
+<script>
+const scroll = new SmoothScroll('a[href*="#"]', {speed:200, speedAsDuration: true});
+</script>
+</body>
