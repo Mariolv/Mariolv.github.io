@@ -1,0 +1,28 @@
+<style>
+    .imagen-responsive {
+        margin:0 auto;
+        padding: 0;
+        text-align: center;
+    }
+    .imagen-responsive .imagen-mobile  {
+        display:none;
+    }
+@media screen and (max-width: 768px){
+    .imagen-responsive img {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 425px){
+    .imagen-responsive .imagen-desktop  {
+        display:none;
+    }
+    .imagen-responsive .imagen-mobile  {
+        display:inherit;
+    }  
+}
+</style>
+<div class="imagen-responsive">
+    <img class="imagen-desktop" src="https://lostsightsblog.files.wordpress.com/2020/12/ciberdelincuencia-desktop.png"/>
+    <img class="imagen-mobile" src="https://lostsightsblog.files.wordpress.com/2020/12/ciberdelincuencia-mobile-2.png"/>
+</div>
