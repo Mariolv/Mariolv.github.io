@@ -1,0 +1,307 @@
+<html>
+<head>
+<script src="https://cdn.rawgit.com/duroty/responsive/master/app.embed.js"></script>
+</head>
+<body>
+<style>
+/* TIPOS */
+    
+/*TIEMPOS HEADLINE BLACK*/
+@font-face{font-family:tiemposheadline-black;src:url(/css/fonts/v2/TiemposHeadline-Black.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Black.eot#iefix) format("embedded-opentype");font-weight:700;font-style:normal;font-display:swap}
+
+@font-face{font-family:TiemposHeadline-Black;src:url(fonts/v2/TiemposHeadline-Black.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+    
+/*TIEMPOS HEADLINE BOLD*/
+@font-face{font-family:tiemposheadline-bold;src:url(/css/fonts/v2/TiemposHeadline-Bold.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Bold.eot#iefix) format("embedded-opentype");font-weight:400;font-style:normal;font-display:swap}
+    
+@font-face{font-family:TiemposHeadline;src:url(fonts/v2/TiemposHeadline-Bold.woff) format("woff");font-weight:900;font-style:normal;font-display:swap}
+    
+/*TIEMPOS HEADLINE SEMIBOLD*/
+@font-face{font-family:tiemposheadline-semibold;src:url(/css/fonts/v2/TiemposHeadline-Semibold.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Semibold.eot#iefix) format("embedded-opentype");font-weight:400;font-style:normal;font-display:swap}
+
+/*TIEMPOS HEADLINE MEDIUM*/
+@font-face{font-family:tiemposheadline-medium;src:url(/css/fonts/v2/TiemposHeadline-Medium.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Medium.eot#iefix) format("embedded-opentype");font-weight:400;font-style:normal;font-display:swap}
+
+@font-face{font-family:TiemposHeadline;src:url(fonts/v2/TiemposHeadline-Medium.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+    
+/*TIEMPOS HEADLINE REGULAR*/
+@font-face{font-family:tiemposheadline-regular;src:url(/css/fonts/v2/TiemposHeadline-Regular.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Regular.eot#iefix) format("embedded-opentype");font-weight:400;font-style:normal;font-display:swap}
+
+@font-face{font-family:TiemposHeadline;src:url(fonts/v2/TiemposHeadline-Regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+
+/*TIEMPOS HEADLINE LIGHT*/
+@font-face{font-family:tiemposheadline-light;src:url(/css/fonts/v2/TiemposHeadline-Light.woff) format("woff"),url(/css/fonts/v2/TiemposHeadline-Light.eot#iefix) format("embedded-opentype");font-weight:100;font-style:normal;font-display:swap}
+    
+@font-face{font-family:TiemposHeadline;src:url(fonts/v2/TiemposHeadline-Light.woff) format("woff");font-weight:100;font-style:normal;font-display:swap}
+    
+/*TIEMPOS TEXT SEMOBIBOLD*/
+@font-face{font-family:TiemposText;src:url(fonts/v2/TiemposText-Semibold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}    
+    
+/*TIEMPOS TEXT REGULAR*/
+@font-face{font-family:tiempostext-regular;src:url(/css/fonts/v2/TiemposText-Regular.woff) format("woff"),url(/css/fonts/v2/TiemposText-Regular.eot#iefix) format("embedded-opentype");font-style:normal;font-display:swap}
+    
+@font-face{font-family:TiemposText;src:url(fonts/v2/TiemposText-Regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+
+/*LIBRE FRANKLIN MEDIUM*/
+@font-face{font-family:LibreFranklin-Medium;src:url(fonts/librefranklin/LibreFranklin-Medium.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+    
+/*LIBRE FRANKLIN SEMIBOLD*/
+@font-face{font-family:LibreFranklin-SemiBold;src:url(fonts/librefranklin/LibreFranklin-SemiBold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+
+/*LIBRE FRANKLIN BOLD*/
+@font-face{font-family:LibreFranklin-Bold;src:url(fonts/librefranklin/LibreFranklin-Bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+
+/*ROBOTO */
+@font-face{font-family:roboto-bold,sans-serif;src:url(/css/fonts/roboto/Roboto-Bold.woff) format("woff"),url(/css/fonts/roboto/Roboto-Bold.eot#iefix) format("embedded-opentype");font-style:normal;font-display:swap}
+    
+/* ELEMENTOS ESTRUCTURALES*/
+    *{
+        margin: 0;
+        padding:0;
+    }
+    body {
+      background-color:#001c4c;  
+    }
+    .landing-suscripciones-razones {
+        background-color:#001c4c;
+        color:#ffffff;
+        /*height:100%;*/
+        margin:0;
+        padding:150px 0 150px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .claim-landing {
+        display: inline-block;
+        margin: 8px 60px 50px 0;
+        padding: 0;
+        text-align: right;
+        width: 290px;
+    }
+    .titulo-landing {
+        color: #fae700;
+        display: inline-block;
+        font-family: 'TiemposHeadline', serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 38px;
+        padding: 0;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    .logo-vanguardia {
+        display: inline-block;
+        margin:3px 0 0 0;
+        padding:0;
+        width:325px;
+    }
+    .razones-landing {
+        display: inline-block;
+        list-style: none;
+        margin: 4px 0 0 0;
+        padding: 0;
+        text-align: left;
+        vertical-align: top;
+        overflow: hidden;
+        width: 650px;
+    }
+    .razon-landing {
+        display: block;
+        font-family: 'TiemposText', serif;
+        margin: 5px 0 45px 10px;
+        padding: 0;
+    }
+    .numero {
+        border: solid 2px #ffffff;
+        border-radius: 100px;
+        box-shadow: 0px 0px 8px #ffffff;
+        color: #ffffff;
+        display: inline-block;
+        font-family: 'TiemposHeadline', serif;
+        font-size: 72px;
+        font-weight: 900;
+        line-height: 72px;
+        margin: 0 20px 0 0;
+        padding: 18px 38px;
+        vertical-align: top;
+    }
+    .razon {
+        color: #ffffff;
+        display: inline-block;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 36px;
+        margin: 0;
+        padding: 0;
+        width: 460px;
+    }
+    .uno {
+        margin-top:15px;
+    }
+    .dos {
+        margin-top:5px;
+    }
+    .tres {
+        margin-top:20px;
+    }
+    .boton-landing {
+        margin: -10px 0 0 150Px;
+    }
+    .enlace-boton-landing{
+        background-color: #fae700;
+        border-radius: 50px;
+        color: #001c4c;
+        display: inline-block;
+        font-family: 'Libre Franklin', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 26px;
+        padding: 15px 45px;
+        text-align: center;
+        text-decoration: none;
+    }
+    .enlace-boton-landing:hover{
+        background-color: #ffffff;
+    }
+    .negrita-blanco {
+        color:#ffffff;
+        font-weight:900;
+    }
+    .negrita-color {
+        color: #fae700;
+        font-weight:900;
+    }
+/*MEDIA QUERIES*/ 
+@media screen and (max-width: 1023px){
+.landing-suscripciones-razones {
+    padding: 80px 10px;
+    }
+.claim-landing {
+    margin: 0 0 50px 0;
+    text-align: center;
+    width: 500px;
+    }
+.titulo-landing {
+    font-size: 40px;
+    line-height: 38px;
+    text-align: center;
+    }   
+.logo-vanguardia {
+    margin: 3px 0 0 0;
+    width: 330px;
+    }
+.razones-landing {
+    display: inline-block;
+    overflow: initial;
+    width: 500px;
+}
+.razon-landing {
+    display: block;
+    margin: 5px 0 40px 10px;
+    padding: 0;
+}
+.numero {
+    font-size: 48px;
+    line-height: 50px;
+    padding: 13px 25px;
+    }
+.razon {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0;
+    padding: 0;
+    width: 360px;
+}
+.uno {
+    margin-top: 7px;
+    }
+.dos {
+    margin-top: -5px;
+    }
+.tres {
+    margin-top: 12px;
+    }
+ .boton-landing {
+    margin: 5px 0 0 110px;
+    }
+.enlace-boton-landing {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 15px 30px;
+    }
+}
+@media screen and (max-width: 690px){
+.landing-suscripciones-razones {
+    padding: 50px 10px;
+    }
+.claim-landing {
+    width: 100%;
+    margin: 0 0 35px 0;
+    }
+.titulo-landing {
+    font-size: 26px;
+    line-height: 28px;
+    }
+.logo-vanguardia {
+    margin: 3px 0 0 0;
+    width: 216px;
+    }
+.razones-landing {
+    margin: 0;
+    text-align: center;
+    overflow: initial;
+    width: 100%;
+    }
+.razon-landing {
+    margin: 0 0 25px 0;
+    padding: 0 10px;
+    }
+.numero {
+    font-size: 24px;
+    line-height: 26px;
+    padding: 5px 12px;
+    box-shadow: 0px 0px 5px #ffffff;
+    margin: 0;
+    }
+.razon {
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+    }
+.uno, .dos, .tres{
+    margin-top:7px;
+    }
+.boton-landing {
+    margin: 35px 0 0 0;
+    }
+.enlace-boton-landing {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 12px 20px;
+    }  
+}
+</style>
+<div class="landing-suscripciones-razones">
+    <div class="claim-landing">
+        <h1 class="titulo-landing">3 razones para suscribirte hoy a</h1>
+        <img class="logo-vanguardia" src="https://www.vangstories.com/wpcms/wp-content/uploads/2021/04/logo-lv-600x64.png" title="La Vanguardia" alt="La Vanguardia" />
+    </div>
+    <ul class="razones-landing">
+        <li class="razon-landing">
+            <span class="numero">1</span>
+            <span class="razon uno">Apoya un <span class="negrita-blanco">periodismo responsable</span> y sin dogmas</span>
+        </li>
+        <li class="razon-landing">
+            <span class="numero">2</span>
+            <span class="razon dos">Disfruta de <span class="negrita-blanco">descuentos y ofertas</span> en m&aacute;s de 500 establecimientos con Club Vanguardia</span>
+        </li>
+        <li class="razon-landing">
+            <span class="numero">3</span>
+            <span class="razon tres">Paga <span class="negrita-color">1 euro al mes</span> <br>durante 3 meses</span>
+        </li>
+        <li class="boton-landing"><a class="enlace-boton-landing" href="" title="&#161;Quiero la oferta de bienvenida&#33;" alt="&#161;Quiero la oferta de bienvenida&#33;">&#161;Quiero la oferta de bienvenida&#33;</a></li>
+    </ul>
+</div>
+</body>
+</html>
