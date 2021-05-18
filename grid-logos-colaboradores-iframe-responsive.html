@@ -1,0 +1,85 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.rawgit.com/duroty/responsive/master/app.embed.js"></script>
+<script src=”https://stories.lavanguardia.com/especial/js/app.iframe.embed.js”></script>
+</head>
+<body>
+<style>
+body {
+    margin:0; 
+    padding:0;
+    }
+.grid-logos {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        min(100%, 150px), /* min value */
+        1fr /* max value */
+      )
+    );
+  gap: 12px;
+}
+.grid-logos {
+    background-color: #f8f8f8;
+    border-top: solid 1px #dddddd;
+    margin:0;
+    padding:20px;
+    }
+.logo {
+    background: #ffffff;
+    border:solid 1px #eeeeee;
+    height:80px;
+    text-align: center;
+    overflow: hidden;
+}
+.imagen-logo {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    opacity: 1;
+    transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+    }
+.imagen-logo:hover {
+    opacity: 0.7;
+    filter:saturate(2);
+    transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+    }
+</style>
+<div class="grid-logos">
+  <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/facebook-friendster-300x300-1.png" title="Logo 1" alt="Logo 1"/></a>
+  </div>
+  <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/facebook-oculus-300x300-1.png" title="Logo 2" alt="Logo 2"/></a>
+  </div>
+  <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/google-waymo-300x300-1.png" title="Logo 3" alt="Logo 3"/></a>
+  </div>
+   <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/google-verily-1-300x300-1.png" title="Logo 4" alt="Logo 4"/></a>
+  </div>
+  <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/google-side-walk-labs-300x300-1.png" title="Logo 5" alt="Imagen 5"/></a>
+  </div>
+  <div class="logo">
+    <a class="enlace-logo" href="" title="" alt="" target="_self">
+    <img class="imagen-logo" src="https://lostsightsblog.files.wordpress.com/2021/03/google-nest-labs-300x300-1.png" title="Logo 6" alt="Logo 6"/></a>
+  </div>
+</div>
+    
+</body>
+</html>
