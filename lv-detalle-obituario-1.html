@@ -15,6 +15,36 @@
     <link rel="stylesheet" href="https://static.lavanguardia.com/css/article.css?1643807493">
     <link rel="stylesheet" href="https://static.lavanguardia.com/css/article-responsive.css?1643807493" media="screen and (min-width: 768px)">
 <style>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		var iframeOffset = $("#iframe-detalle-obituario", window.parent.document).offset();
+        $("a").each(function () {
+            var link = $(this);
+            var href = link.attr("href");
+            if (href && href[0] == "#") {
+                var name = href.substring(1);
+                $(this).click(function () {
+                    var nameElement = $("[name='" + name + "']");
+                    var idElement = $("#" + name);
+                    var element = null;
+                    if (nameElement.length > 0) {
+                        element = nameElement;
+                    } else if (idElement.length > 0) {
+                        element = idElement;
+                    }
+
+                    if (element) {
+                        var offset = element.offset();
+                        window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                    }
+
+                    return false;
+                });
+            }
+        });
+	});
+	</script>
 /* TIPOS */
 /*LIBRE FRANKLIN*/
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -187,7 +217,7 @@ html:focus-within {
 <article class="article-default">
 <div class="obituario-contenedor">
     <div class="obituario-cabecera" id="cabecera">
-        <h1 class="obituario-nombre-fallecido">Mª del Mar de Fontcuberta y Balaguer</h1>
+        <a name="cabecera"><h1 class="obituario-nombre-fallecido">Mª del Mar de Fontcuberta y Balaguer</h1></a>
         <h2 class="obituario-datos-fallecido">Profesora de lengua francesa de enseñanza media por más de 45 años, viuda de Carlos González. Cuatro hijos y catorce nietos.</h2>
         <div class="obituario-contenedor-imagen-fallecido">
             <img class="obituario-imagen-fallecido" src="https://lostsightsblog.files.wordpress.com/2022/02/obituario-imagen-fallecido.png" title="Mª del Mar de Fontcuberta y Balaguer" alt="Mª del Mar de Fontcuberta y Balaguer"/>
@@ -250,7 +280,7 @@ html:focus-within {
         <span class="obituario-datos">Ceremonia religiosa: 26 de noviembre  |  Hora: 11:45  |  Lugar: Tanatori Sant Gervasi</span>
         <span class="obituario-datos">Inicio velatorio: 25 de noviembre | Hora: 17:00 | Lugar: en el mismo tanatorio</span>
         </div>
-        
+        <a name="mapa-tanatorio"></a>
         <iframe id="mapa-tanatorio" class="obituario-mapa-tanatorio" src="https://www.google.com/maps/d/embed?mid=1opqXGh-h9NCSLRElWHdQkiMICkGQu261&ehbc=2E312F" border="none;" width="100%" height="480"></iframe>
         <div class="separador-anchor-inicio">
             <a class="anchor-inicio" href="#cabecera" title="Volver al inicio" alt="Volver al inicio">&#129145;</a>
