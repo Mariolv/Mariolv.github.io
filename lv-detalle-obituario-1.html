@@ -19,117 +19,11 @@
 /* TIPOS */
 /*LIBRE FRANKLIN*/
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* SCROLL SUAVE */
-	/*html, body {
-        scroll-behavior: smooth;
-    }
-    html:focus-within {
-        scroll-behavior: smooth;
-    }
-    body:focus-within {
-        scroll-behavior: smooth;
-    }*/
-/*@keyframes smoothscroll1 {
-  from, to {
-    scroll-behavior: smooth;
-  }
-}
 
-@keyframes smoothscroll2 {
-  from, to {
-    scroll-behavior: smooth;
-  }
-}
-
-html {
-  animation: smoothscroll1 0.5s;
-}
-
-html:focus-within {
-  animation-name: smoothscroll2;
-  scroll-behavior: smooth;
-}*/
-    
-/* VENTANA MODAL MAPA */    
-    
-    
-input[type="checkbox"] {
-	display:none;
-}
-input[type="checkbox"]:checked ~ .modal,
-input[type="checkbox"]:checked ~ .modal-background {
-	display: block;
-}
-.modal-background {
-	width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    z-index: 9998;
-}
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    display: none;	
-    width: 500px;
-    height: 300px;
-    background-color: #fff;
-    box-sizing: border-box;
-    z-index: 9999;
-}
-.modal > p {
-	padding: 15px;
-    margin: 0;
-}
-.modal-header {
-	background-color: #f9f9f9;
-    border-bottom: 1px solid #dddddd;
-    box-sizing: border-box;
-    height: 50px;
-}
-.modal-header h3 {
-	margin: 0;
-    box-sizing: border-box;
-    padding-left: 15px;
-    line-height: 50px;
-    color: #4d4d4d;
-    font-size: 16px;
-    display: inline-block;
-}
-.modal-header label {
-	box-sizing: border-box;
-    border-left: 1px solid #dddddd;
-    float: right;
-    line-height: 50px;
-    padding: 0 15px 0 15px;
-    cursor: pointer;
-}
-.modal-header label:hover img {
-	opacity: 0.6;
-}
-/* below is optional, it is just an example for the blue button */
-.example-label {
-	box-sizing: border-box;
-    display: inline-block;
-    padding: 10px;
-    background-color: #375d91;
-    color: #f9f9f9;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.example-label:hover {
-	background-color: #3c669f;
-}
-    
 /* ELEMENTOS */
+    .main-article-container {
+    width: 100%!important;
+    }
     .obituario-contenedor {
         margin:60px 10px 70px 10px;
         padding:0;
@@ -190,7 +84,7 @@ input[type="checkbox"]:checked ~ .modal-background {
     .obituario-datos:first-child{
         border-bottom: dotted 1px #ccc;
     }
-    .anchor-tanatorio {
+    .boton-anchor-detalle-mapa {
         background-color: #bcbcbc;
         border-radius: 100%;
         color:#fff;
@@ -199,15 +93,9 @@ input[type="checkbox"]:checked ~ .modal-background {
         font-weight: 700;
         line-height: 14px;
         margin-left:5px;
-        padding: 2px 6px;
+        padding: 2px 6px;       
     }
-    .anchor-tanatorio:hover{
-        background-color: #555;
-        border-color: #555;
-        color:#fff;
-        text-decoration: none;
-    }
-        .anchor-inicio:hover{
+    .boton-anchor-detalle-mapa:hover{
         background-color: #555;
         border-color: #555;
         color:#fff;
@@ -234,29 +122,107 @@ input[type="checkbox"]:checked ~ .modal-background {
     #mapa-tanatorio {
         border-bottom: solid 1px #cccccc;
     }
-    .separador-anchor-inicio {
-        text-align: center;
-        background-color: #f8f8f8;
-        border-bottom: dotted 1px #ccc;
-        margin-top: -7px;
-        padding-top: 30px;
-        position: relative;
-    }
-    .anchor-inicio{
-        margin:0;
-        position:absolute;
-        top:22px;
-        background-color: #bcbcbc;
-        border-radius: 100%;
-        color:#fff;
-        font-family: 'Libre Franklin',sans-serif;
-        font-size: 10px;
-        font-weight: 500;
-        line-height: 14px;
-        margin-left:-10px;
-        padding: 2px 4px 3px 4px;
-    }
-    @media (max-width: 767px){
+/* OVERLAY VENTANA MODAL*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:3999998;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+/* POPUP VENTANA MODAL*/
+.popup {
+  border: solid 1px #c5c5c5;
+  margin: 230px auto 0 auto;
+  padding: 0;
+  background: #ffffff;
+  /*border-radius: 10px;*/
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.3); 
+  overflow:hidden;
+  width:500px;
+  position: relative;
+  transition: all 1s ease-in-out;
+  z-index:3999999;
+}
+/* BOTÓN DE CIERRE VENTANA MODAL */
+.popup .boton-cierre-popup {
+	background-color:#bcbcbc;
+	height:39px;
+	width:39px;
+	border-radius:30px;
+	position: absolute;
+	right:9px;
+	top:9px;
+    transition: 0.5s ease;
+}
+.popup .boton-cierre-popup:hover, .popup .boton-cierre-popup:focus {
+	background-color:#555;
+    box-shadow: none;
+}
+a.boton-cierre-popup:before {
+content: "";
+display: block;
+height: 26px;
+width: 3px;
+background: #ffffff;
+position: absolute;
+right: 18px;
+top:7px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+.popup .boton-cierre-popup:after {
+content: "";
+display: block;
+height: 26px;
+width: 3px;
+background: #ffffff;
+position: absolute;
+right: 18px;
+top:7px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+/* CABECERA POPUP VENTANA MODAL */
+.popup .cabecera-popup {
+    font-family: "Open Sans Bold", sans-serif;
+    color: #ffffff;
+    margin:0;
+    padding:;
+}
+#detalle-mapa .cabecera-popup {
+	background-color: #e5e5e5;
+	}
+.popup .cabecera-popup .titulo-popup {
+  color:#666666;
+  font-family: 'Libre Franklin',sans-serif;
+  text-align: left;
+  font-size: 22px;
+  line-height:24px;
+  padding:15px;
+  margin:0;
+  }
+/* CUERPO DEL POPUP VENTANA MODAL*/
+.popup .cuerpo-popup {
+    overflow: hidden;
+    margin:0;
+    padding:0;
+    height:465px;
+}      
+@media (max-width: 767px){
     .obituario-cuerpo {
         margin:0;
     } 
@@ -271,25 +237,27 @@ input[type="checkbox"]:checked ~ .modal-background {
 <article class="article-default">
 <div class="obituario-contenedor">
     <div class="obituario-cabecera" id="cabecera">
-        <h1 class="obituario-nombre-fallecido">Mª del Mar de Fontcuberta y Balaguer</h1></a>
+        <h1 class="obituario-nombre-fallecido">Mª del Mar de Fontcuberta y Balaguer</h1>
         <h2 class="obituario-datos-fallecido">Profesora de lengua francesa de enseñanza media por más de 45 años, viuda de Carlos González. Cuatro hijos y catorce nietos.</h2>
         <div class="obituario-contenedor-imagen-fallecido">
             <img class="obituario-imagen-fallecido" src="https://lostsightsblog.files.wordpress.com/2022/02/obituario-imagen-fallecido.png" title="Mª del Mar de Fontcuberta y Balaguer" alt="Mª del Mar de Fontcuberta y Balaguer"/>
         </div>
         <div class="obituario-contenedor-datos-1">
-        <span class="obituario-datos">Ceremonia religiosa: 26 de noviembre  |  Hora: 11:45  |  Lugar: Tanatori Sant Gervasi <a class="anchor-tanatorio" href="#mapa-tanatorio" target="_parent" title="Tanatori Sant Gervasi" alt="Tanatori Sant Gervasi">?</a></span>
-        <input type="checkbox" id="modal">
-<label for="modal" class="example-label">Open Modal</label>
-<label for="modal" class="modal-background"></label>
-<div class="modal">
-	<div class="modal-header">
-		<h3>Modal Title</h3>
-        <label for="modal">
-        	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAdVBMVEUAAABNTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0N3NIOAAAAJnRSTlMAAQIDBAUGBwgRFRYZGiEjQ3l7hYaqtLm8vsDFx87a4uvv8fP1+bbY9ZEAAAB8SURBVBhXXY5LFoJAAMOCIP4VBRXEv5j7H9HFDOizu2TRFljedgCQHeocWHVaAWStXnKyl2oVWI+kd1XLvFV1D7Ng3qrWKYMZ+MdEhk3gbhw59KvlH0eTnf2mgiRwvQ7NW6aqNmncukKhnvo/zzlQ2PR/HgsAJkncH6XwAcr0FUY5BVeFAAAAAElFTkSuQmCC" width="16" height="16" alt="">
-        </label>
-    </div>
-    <iframe id="mapa-tanatorio" class="obituario-mapa-tanatorio" src="https://www.google.com/maps/d/embed?mid=1opqXGh-h9NCSLRElWHdQkiMICkGQu261&ehbc=2E312F" border="none;" width="100%" height="480"></iframe>
-</div>
+        <span class="obituario-datos">Ceremonia religiosa: 26 de noviembre  |  Hora: 11:45  |  Lugar: Tanatori Sant Gervasi <a class="boton-anchor-detalle-mapa" href="#detalle-mapa" id="popup-1"><span class="numero">?</span></a></span>
+		
+            <!-- POPUP MAPA TANATORIO -->
+		<div id="detalle-mapa" class="overlay">
+			<div class="popup">
+				<div class="cabecera-popup">
+					<h2 class="titulo-popup">Tanatorio de Sant Gervasi</h2>
+					<a class="boton-cierre-popup" href="#carlos-v-furor"></a>
+				</div>
+				<div class="cuerpo-popup">
+                        <iframe id="mapa-tanatorio" class="obituario-mapa-tanatorio" src="https://www.google.com/maps/d/embed?mid=1opqXGh-h9NCSLRElWHdQkiMICkGQu261&ehbc=2E312F" border="none;" width="100%" height="480"></iframe>
+				</div>
+			</div>
+		</div>
+
         <span class="obituario-datos">Inicio velatorio: 25 de noviembre | Hora: 17:00 | Lugar: en el mismo tanatorio</span>
         </div>
     </div>
@@ -352,8 +320,7 @@ input[type="checkbox"]:checked ~ .modal-background {
         </div>    
         </div>   
         </div>
-    </div>   
-</div>
+    </div>
 </article>
 </div>
 </body>
