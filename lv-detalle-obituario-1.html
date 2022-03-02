@@ -39,7 +39,7 @@
         font-family: 'Tiempos Headline',serif;
         font-size: 42px;
         line-height: 44px;
-        font-weight: 500;
+        font-weight: 600;
         margin:0 0 20px 0;
     }
     .obituario-datos-fallecido, .obituario-cierre{
@@ -119,108 +119,107 @@
     .obituario-mapa-tanatorio{
         border: none;
     }
-    #mapa-tanatorio {
+    /*#mapa-tanatorio {
         border-bottom: solid 1px #cccccc;
-    }
+    }*/
 /* OVERLAY VENTANA MODAL*/
 .overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index:3999998;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+        z-index:3999998;
 }
 .overlay:target {
-  visibility: visible;
-  opacity: 1;
+        visibility: visible;
+        opacity: 1;
 }
 /* POPUP VENTANA MODAL*/
 .popup {
-  border: solid 1px #c5c5c5;
-  margin: 148px auto 0 auto;
-  padding: 0;
-  background: #ffffff;
-  /*border-radius: 10px;*/
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.3); 
-  overflow:hidden;
-  width:500px;
-  position: relative;
-  transition: all 1s ease-in-out;
-  z-index:3999999;
+        border: solid 1px #c5c5c5;
+        margin: 148px auto 0 auto;
+        padding: 0;
+        background: #ffffff;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3); 
+        overflow:hidden;
+        width:500px;
+        position: relative;
+        transition: all 1s ease-in-out;
+        z-index:3999999;
 }
 /* BOTÓN DE CIERRE VENTANA MODAL */
 .popup .boton-cierre-popup {
-	background-color:#bcbcbc;
-	height:39px;
-	width:39px;
-	border-radius:30px;
-	position: absolute;
-	right:9px;
-	top:9px;
-    transition: 0.5s ease;
+        background-color:#bcbcbc;
+        height:39px;
+        width:39px;
+        border-radius:30px;
+        position: absolute;
+        right:9px;
+        top:9px;
+        transition: 0.5s ease;
 }
 .popup .boton-cierre-popup:hover, .popup .boton-cierre-popup:focus {
-	background-color:#555;
-    box-shadow: none;
+        background-color:#555;
+        box-shadow: none;
 }
 a.boton-cierre-popup:before {
-content: "";
-display: block;
-height: 26px;
-width: 3px;
-background: #ffffff;
-position: absolute;
-right: 18px;
-top:7px;
--webkit-transform:rotate(45deg);
--moz-transform:rotate(45deg);
--o-transform:rotate(45deg);
-transform:rotate(45deg);
+        content: "";
+        display: block;
+        height: 26px;
+        width: 3px;
+        background: #ffffff;
+        position: absolute;
+        right: 18px;
+        top:7px;
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        -o-transform:rotate(45deg);
+        transform:rotate(45deg);
 }
 .popup .boton-cierre-popup:after {
-content: "";
-display: block;
-height: 26px;
-width: 3px;
-background: #ffffff;
-position: absolute;
-right: 18px;
-top:7px;
--webkit-transform:rotate(-45deg);
--moz-transform:rotate(-45deg);
--o-transform:rotate(-45deg);
-transform:rotate(-45deg);
+        content: "";
+        display: block;
+        height: 26px;
+        width: 3px;
+        background: #ffffff;
+        position: absolute;
+        right: 18px;
+        top:7px;
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        -o-transform:rotate(-45deg);
+        transform:rotate(-45deg);
 }
 /* CABECERA POPUP VENTANA MODAL */
 .popup .cabecera-popup {
-    font-family: "Open Sans Bold", sans-serif;
-    color: #ffffff;
-    margin:0;
-    padding:;
+        font-family: "Open Sans Bold", sans-serif;
+        color: #ffffff;
+        margin:0;
+        padding:;
 }
 #detalle-mapa .cabecera-popup {
-	background-color: #e5e5e5;
+        background-color: #e5e5e5;
 	}
 .popup .cabecera-popup .titulo-popup {
-  color:#666666;
-  font-family: 'Libre Franklin',sans-serif;
-  text-align: left;
-  font-size: 22px;
-  line-height:24px;
-  padding:15px;
-  margin:0;
+        color:#666666;
+        font-family: 'Libre Franklin',sans-serif;
+        text-align: left;
+        font-size: 22px;
+        line-height:24px;
+        padding:15px;
+        margin:0;
   }
 /* CUERPO DEL POPUP VENTANA MODAL*/
 .popup .cuerpo-popup {
-    overflow: hidden;
-    margin:0;
-    padding:0;
-    height:465px;
+        overflow: hidden;
+        margin:0;
+        padding:0;
+        height:465px;
 }      
 @media (max-width: 767px){
     .obituario-cuerpo {
@@ -308,15 +307,7 @@ transform:rotate(-45deg);
         
         <p data-gtm-element-container="modulo-texto-link" class="paragraph">Sed lacinia tincidunt enim sit amet bibendum. In at ante sed massa imperdiet elementum vitae ut dolor. Sed condimentum tellus eros, ut placerat quam tristique luctus. Sed vitae accumsan enim, eu maximus neque. Sed fermentum purus sapien, eu feugiat ipsum accumsan egestas. Vivamus pulvinar libero euismod, tempor purus ornare, facilisis est. Maecenas ornare enim et dui porttitor pellentesque. Nam in eleifend tellus, eget dignissim ex. Nam ullamcorper lacus urna, non ultricies justo pharetra at. Aenean laoreet ac turpis vulputate maximus.</p>
         
-        <h3 class="obituario-cierre">Descanse en paz,<br>Mª del Mar</h3>
-            
-        <div class="obituario-contenedor-datos-2">
-        <span class="obituario-datos">Ceremonia religiosa: 26 de noviembre  |  Hora: 11:45  |  Lugar: Tanatori Sant Gervasi</span>
-        <span class="obituario-datos">Inicio velatorio: 25 de noviembre | Hora: 17:00 | Lugar: en el mismo tanatorio</span>
-        </div>
-        <iframe id="mapa-tanatorio" class="obituario-mapa-tanatorio" src="https://www.google.com/maps/d/embed?mid=1opqXGh-h9NCSLRElWHdQkiMICkGQu261&ehbc=2E312F" border="none;" width="100%" height="480"></iframe>
-        <!--<div class="separador-anchor-inicio">
-            <a class="anchor-inicio" href="#cabecera" target="_parent" title="Volver al inicio" alt="Volver al inicio">&#129145;</a>-->
+        <h3 class="obituario-cierre">Descanse en paz,<br>Mª del Mar</h3>  
         </div>    
         </div>   
         </div>
