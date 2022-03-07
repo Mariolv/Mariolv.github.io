@@ -221,6 +221,84 @@ a.boton-cierre-popup:before {
         padding:0;
         height:465px;
 }
+/* PESTAÑAS */
+.contenedor-pestanyas{
+        display:flex;
+        flex-direction: column;
+        align-items: left;
+        margin-top:40px;
+}
+.pestanyas {
+        z-index: 100000;
+        margin-bottom: -0.5px;
+}
+.pestanya{
+        cursor: pointer;
+        border-left: 1px solid #f5f5f5;
+        border-top: 1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5;
+        border-bottom: solid 1px #cccccc;
+        padding:16px 20px 10px 20px;
+        margin:0px 2px;
+        background:#f5f5f5;
+        display:inline-block;
+        color:#888888;
+        font-family: 'Tiempos Headline',serif;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 300;
+}
+.pestanya:hover{
+        color:#000000;
+}
+#fotos-pestanya{
+        margin-left:0;
+}
+.paneles{
+        background:#ffffff;
+        border-top: solid 1px#cccccc;
+        width:100%;
+        overflow:hidden; 
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-titulo{
+  font-size:1.5em;
+  font-weight:bold
+}
+.panel-video {
+  margin: 0 0 -5px 0;
+  padding:0;
+}
+#videos-panel {
+   margin-bottom:20px;    
+    }
+.radio{
+  display:none;
+}
+#fotos:checked ~ .paneles #fotos-panel,
+#videos:checked ~ .paneles #videos-panel{
+  display:block
+}
+#fotos:checked ~ .pestanyas #fotos-pestanya,
+#videos:checked ~ .pestanyas #videos-pestanya{
+  background:#ffffff;
+  color:#000;
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom:1px solid #ffffff;
+}
 /* MEDIA QUERIES */
 @media (max-width: 767px){
 .obituario-contenedor {
@@ -284,7 +362,7 @@ a.boton-cierre-popup:before {
         <div class="obituario-contenedor-datos-1">
         <span class="obituario-datos">Ceremonia religiosa: 26 de noviembre  |  Hora: 11:45  |  Lugar: Tanatori Sant Gervasi <a class="boton-anchor-detalle-mapa" href="#detalle-mapa" id="popup-1">?</a></span>
 		
-            <!-- POPUP MAPA TANATORIO -->
+<!-- INICIO POPUP MAPA TANATORIO -->
 		<div id="detalle-mapa" class="overlay">
 			<div class="popup">
 				<div class="cabecera-popup">
@@ -296,7 +374,7 @@ a.boton-cierre-popup:before {
 				</div>
 			</div>
 		</div>
-
+<!-- FIN POPUP MAPA TANATORIO -->   
         <span class="obituario-datos">Inicio velatorio: 25 de noviembre | Hora: 17:00 | Lugar: en el mismo tanatorio</span>
         </div>
     </div>
@@ -335,15 +413,60 @@ a.boton-cierre-popup:before {
             
         <p data-gtm-element-container="modulo-texto-link" class="paragraph">Maecenas vitae felis nibh. Suspendisse commodo, lectus eget mattis elementum, magna orci eleifend risus, non bibendum nulla lacus quis tortor. Sed vitae diam sed magna bibendum egestas ut tincidunt ex. Ut eleifend auctor libero, eu pharetra felis semper quis. Phasellus eros orci, convallis quis tristique ac, eleifend non lorem.</p>
             
-        <h3 class="obituario-titulo-parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit festinamus urbi et orbe sic transit</h3>    
-            
-        <p data-gtm-element-container="modulo-texto-link" class="paragraph">Suspendisse elit dolor, lobortis at accumsan at, placerat ut urna. Aenean ac urna consequat, auctor tortor sed, pretium mi. Vestibulum in felis vel turpis congue congue. Nulla risus augue, imperdiet bibendum interdum sit amet, auctor in lorem. Nam dolor ligula, dictum ac massa scelerisque, tristique gravida eros. In tortor nulla, efficitur id orci ac, auctor tristique enim. Praesent sit amet fringilla nisl. Aliquam risus magna, lacinia at rhoncus sed, iaculis et urna. Mauris sit amet hendrerit nisl, at faucibus nisi. Nulla placerat nec turpis ac sodales. Aliquam eget ante venenatis ipsum dignissim accumsan a quis urna.</p>
-            
-        <figure class="composite-image image-container " data-gtm-element-container="button-gallery"><picture><source media="(min-width: 638px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><source media="(min-width: 480px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/files/fp/uploads/2022/02/23/62157861b2b17.r_d.3000-2000.jpeg" data-full-src="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png" alt="Horizontal" class="lazy loaded" data-ll-status="loaded"></picture>
-        <figcaption class="figure-caption"><p class="caption-title ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+<!-- INICIO PESTAÑAS FOTOS/VÍDEOS -->      
+<div class="contenedor-pestanyas">
+  <input class="radio" id="fotos" name="grupo" type="radio" checked>
+  <input class="radio" id="videos" name="grupo" type="radio">
+  <div class="pestanyas">
+  <label class="pestanya" id="fotos-pestanya" for="fotos">Álbum de fotos</label>
+  <label class="pestanya" id="videos-pestanya" for="videos">Vídeos</label>
+    </div>
+  <div class="paneles">
+  <div class="panel" id="fotos-panel">
+    <!--<div class="panel-titulo">Álbum de fotos</div>-->
+    <figure class="composite-image image-container " data-gtm-element-container="button-gallery"><picture><source media="(min-width: 638px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><source media="(min-width: 480px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/files/fp/uploads/2022/02/23/62157861b2b17.r_d.3000-2000.jpeg" data-full-src="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png" alt="Horizontal" class="lazy loaded" data-ll-status="loaded"></picture>
+    <figcaption class="figure-caption"><p class="caption-title ">FOTO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+        <span class="caption-author ">Lorem ipsum</span>
+    </figcaption>
+    </figure>
+    <figure class="composite-image image-container " data-gtm-element-container="button-gallery"><picture><source media="(min-width: 638px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><source media="(min-width: 480px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/files/fp/uploads/2022/02/23/62157861b2b17.r_d.3000-2000.jpeg" data-full-src="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-2.png" alt="Horizontal" class="lazy loaded" data-ll-status="loaded"></picture>
+    <figcaption class="figure-caption"><p class="caption-title ">FOTO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
         <span class="caption-author ">Lorem ipsum</span>
         </figcaption>
         </figure>
+  </div>
+  <div class="panel" id="videos-panel">
+    <!--<div class="panel-titulo">Álbum de vídeos</div>-->
+    <figure class="composite-image image-container " data-gtm-element-container="button-gallery">
+    <iframe class="panel-video" width="100%" height="278" src="https://www.youtube.com/embed/wPp6e9fOj9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <figcaption class="figure-caption"><p class="caption-title ">VÍDEO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+        <span class="caption-author ">Lorem ipsum</span>
+    </figcaption>  
+    </figure>
+    <figure class="composite-image image-container " data-gtm-element-container="button-gallery">
+    <iframe class="panel-video" width="100%" height="278" src="https://www.youtube.com/embed/wPp6e9fOj9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <figcaption class="figure-caption"><p class="caption-title ">VÍDEO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+        <span class="caption-author ">Lorem ipsum</span>
+    </figcaption>  
+    </figure>
+    <!--<figure class="composite-image image-container " data-gtm-element-container="button-gallery"><picture><source media="(min-width: 638px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png"><source media="(min-width: 480px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/files/fp/uploads/2022/02/23/62157861b2b17.r_d.3000-2000.jpeg" data-full-src="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png" alt="Horizontal" class="lazy loaded" data-ll-status="loaded"></picture>
+    <figcaption class="figure-caption"><p class="caption-title ">VÍDEO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+        <span class="caption-author ">Lorem ipsum</span>
+    </figcaption>
+    </figure>
+    <figure class="composite-image image-container " data-gtm-element-container="button-gallery"><picture><source media="(min-width: 638px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png"><source media="(min-width: 480px)" srcset="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/files/fp/uploads/2022/02/23/62157861b2b17.r_d.3000-2000.jpeg" data-full-src="https://lostsightsblog.files.wordpress.com/2022/03/obituario-imagen-544x363-1.png" alt="Horizontal" class="lazy loaded" data-ll-status="loaded"></picture>
+    <figcaption class="figure-caption"><p class="caption-title ">VÍDEO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl arcu, viverra volutpat erat faucibus erta ipse factum novat.</p>
+        <span class="caption-author ">Lorem ipsum</span>
+    </figcaption>
+    </figure>-->
+  </div>
+  </div>
+</div>
+<!-- FIN PESTAÑAS FOTOS/VÍDEOS -->  
+            
+        <h3 class="obituario-titulo-parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit festinamus urbi et orbe sic transit</h3>    
+            
+        <p data-gtm-element-container="modulo-texto-link" class="paragraph">Suspendisse elit dolor, lobortis at accumsan at, placerat ut urna. Aenean ac urna consequat, auctor tortor sed, pretium mi. Vestibulum in felis vel turpis congue congue. Nulla risus augue, imperdiet bibendum interdum sit amet, auctor in lorem. Nam dolor ligula, dictum ac massa scelerisque, tristique gravida eros. In tortor nulla, efficitur id orci ac, auctor tristique enim. Praesent sit amet fringilla nisl. Aliquam risus magna, lacinia at rhoncus sed, iaculis et urna. Mauris sit amet hendrerit nisl, at faucibus nisi. Nulla placerat nec turpis ac sodales. Aliquam eget ante venenatis ipsum dignissim accumsan a quis urna.</p>
         
         <p data-gtm-element-container="modulo-texto-link" class="paragraph">Sed lacinia tincidunt enim sit amet bibendum. In at ante sed massa imperdiet elementum vitae ut dolor. Sed condimentum tellus eros, ut placerat quam tristique luctus. Sed vitae accumsan enim, eu maximus neque. Sed fermentum purus sapien, eu feugiat ipsum accumsan egestas. Vivamus pulvinar libero euismod, tempor purus ornare, facilisis est. Maecenas ornare enim et dui porttitor pellentesque. Nam in eleifend tellus, eget dignissim ex. Nam ullamcorper lacus urna, non ultricies justo pharetra at. Aenean laoreet ac turpis vulputate maximus.</p>
         
