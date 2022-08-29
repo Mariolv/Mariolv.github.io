@@ -15,14 +15,14 @@ body {
     margin:0;
     padding:0;
     text-align: center;
+    height:600px;
     }
 /* Vídeo: 100% de anchura y altura para cubrir toda la ventana */
 #myVideo {
-  display:block;
-  min-width: 100%;
-  min-height: 100%;
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
 }
-
 /* Contenido-textual 100% de anchura y altura para cubrir todo el vídeo*/
 .contenido-textual {
   display:block;
@@ -43,6 +43,12 @@ body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.textos {
+  display:block;
+  margin:0;
+      padding:0;
+    width:100%;
+    }
 
 /* Style the button used to pause/play the video */
 #boton-reproduccion, #boton-sonido {
@@ -65,7 +71,7 @@ body {
 </style>
 <div class="contenedor-video">
 <!-- El vídeo -->
-<video autoplay="play" muted loop="" id="myVideo">
+<video class="centrado-vertical" autoplay="play" muted loop="" id="myVideo">
   <source src="https://mariolv.github.io/video-prueba.mp4" type="video/mp4">
 </video>
 
