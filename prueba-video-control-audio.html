@@ -15,26 +15,28 @@ body {
     margin:0;
     padding:0;
     text-align: center;
-    height:600px;
+    height:720px;
     }
-/* Vídeo: 100% de anchura y altura para cubrir toda la ventana */
 #myVideo {
     display: block;
     min-width: 100%;
     min-height: 100%;
+
 }
-/* Contenido-textual 100% de anchura y altura para cubrir todo el vídeo*/
+.poster {
+    background-image: url("https://mariolv.github.io/video-capitulo-1-1280x720-2-poster.jpg");
+    background-color: #eee8e4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 .contenido-textual {
-  display:block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
   width: 100%;
   height:100%;
   padding: 0;
-  margin:0;
+  /*margin:0;*/
 }
 .centrado-vertical {
   margin: 0;
@@ -49,16 +51,19 @@ body {
       padding:0;
     width:100%;
     }
-
-/* Style the button used to pause/play the video */
+.epigrafe-capitulo {
+        
+    }
+/* Botones de reproducción y audio */
 #boton-reproduccion, #boton-sonido {
-  width: 200px;
   font-size: 18px;
   padding: 10px;
   border: none;
   background: #000;
   color: #fff;
   cursor: pointer;
+  padding:5px 15px;
+  border-radius:25px;
 }
 #boton-reproduccion:hover {
   background: #ddd;
@@ -68,28 +73,31 @@ body {
   background: #ddd;
   color: black;
 }
-/* BOTÓN "CÁMARA" VÍDEOS*/
 .ssBtnDefault {
 opacity: 0 !important;
 }
+@media screen and (max-width: 620px) {
+#myVideo {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    left: -450px;
+}    
+    }
 </style>
 <div class="contenedor-video">
-<!-- El vídeo -->
-<video class="centrado-vertical" autoplay="play" muted loop="" id="myVideo">
-  <source src="https://mariolv.github.io/video-prueba.mp4" type="video/mp4">
+    <video class="centrado-vertical poster" autoplay="play" muted loop="" id="myVideo">
+  <source src="https://mariolv.github.io/video-capitulo-1-1280x720-2.mp4" type="video/mp4">
 </video>
-
-<!-- Optional: some overlay text to describe the video -->
-<div class="contenido-textual">
+<div class="contenido-textual centrado-vertical">
 <div class="textos centrado-vertical">
   <p class="epigrafe-capitulo">Capítulo 1: Kilela Balanda</p>
-  <h1>Un conjuro para que brote el mito</h1>
-  <!-- Use a button to pause/play the video with JavaScript -->
+  <h1 class="titulo-capitulo">Un conjuro para que brote el mito</h1>
   <!--<button class="boton-accion" id="boton-reproduccion" onclick="controlReproduccion()">Pausar vídeo</button>-->
   <button class="boton-accion" id="boton-sonido" onclick="controlSonido()">Activar sonido</button>
 </div>
 </div>
-
+</div>
 
 <!-- Javascript -->
 <script>
