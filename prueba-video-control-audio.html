@@ -5,23 +5,43 @@
 </head>
 <body>
 <style>
-/* Style the video: 100% width and height to cover the entire window */
+body {
+    margin:0;
+    padding:0;
+    }
+.contenedor-video {
+    overflow: hidden;
+    position: relative;
+    margin:0;
+    padding:0;
+    text-align: center;
+    }
+/* Vídeo: 100% de anchura y altura para cubrir toda la ventana */
 #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  display:block;
   min-width: 100%;
   min-height: 100%;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+/* Contenido-textual 100% de anchura y altura para cubrir todo el vídeo*/
+.contenido-textual {
+  display:block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   width: 100%;
-  padding: 20px;
+  height:100%;
+  padding: 0;
+  margin:0;
+}
+.centrado-vertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* Style the button used to pause/play the video */
@@ -34,7 +54,6 @@
   color: #fff;
   cursor: pointer;
 }
-
 #boton-reproduccion:hover {
   background: #ddd;
   color: black;
@@ -44,19 +63,21 @@
   color: black;
 }
 </style>
-
-<!-- The video -->
+<div class="contenedor-video">
+<!-- El vídeo -->
 <video autoplay="play" muted loop="" id="myVideo">
   <source src="https://mariolv.github.io/video-prueba.mp4" type="video/mp4">
 </video>
 
 <!-- Optional: some overlay text to describe the video -->
-<div class="content">
-  <h1>Lorem ipsum dolor</h1>
-  <p>Lorem ipsum sit amet consectetur adispiscing elit festinamus</p>
+<div class="contenido-textual">
+<div class="textos centrado-vertical">
+  <p class="epigrafe-capitulo">Capítulo 1: Kilela Balanda</p>
+  <h1>Un conjuro para que brote el mito</h1>
   <!-- Use a button to pause/play the video with JavaScript -->
-  <button id="boton-reproduccion" onclick="controlReproduccion()">Pausar vídeo</button>
-  <button id="boton-sonido" onclick="controlSonido()">Activar sonido</button>
+  <!--<button class="boton-accion" id="boton-reproduccion" onclick="controlReproduccion()">Pausar vídeo</button>-->
+  <button class="boton-accion" id="boton-sonido" onclick="controlSonido()">Activar sonido</button>
+</div>
 </div>
 
 
@@ -92,7 +113,6 @@ function controlSonido() {
   }
 }
 </script>
+</div>
 </body>
 </html>
-
-
