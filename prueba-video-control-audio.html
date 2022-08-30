@@ -54,24 +54,52 @@ body {
 .epigrafe-capitulo {
         
     }
+.titulo-capitulo {
+        
+    }
 /* Botones de reproducción y audio */
 #boton-reproduccion, #boton-sonido {
-  font-size: 18px;
-  padding: 10px;
   border: none;
-  background: #000;
-  color: #fff;
+  background: #00000000;
   cursor: pointer;
-  padding:5px 15px;
-  border-radius:25px;
+  display: inline-block;
+  margin: 0;
+  padding:0;
 }
+.pausar-video, .reproducir-video, .desactivar-sonido, .activar-sonido {
+  border: none;
+  background: #00000000;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0;*/
+}
+.pausar-video {
+    background-image: url(https://lavanguardia-github.github.io/Imagenes/Iconos/icono-pause-80x80.svg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    }
+.reproducir-video {
+    background-image: url(https://lavanguardia-github.github.io/Imagenes/Iconos/icono-play-80x80.svg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    }
+.desactivar-sonido {
+    background-image: url(https://lavanguardia-github.github.io/Imagenes/Iconos/icono-audio-off-80x80.svg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    }
+.activar-sonido {
+    background-image: url(https://lavanguardia-github.github.io/Imagenes/Iconos/icono-audio-on-80x80.svg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    }
 #boton-reproduccion:hover {
-  background: #ddd;
-  color: black;
+  filter: invert();
 }
 #boton-sonido:hover {
-  background: #ddd;
-  color: black;
+  filter: invert();
 }
 .ssBtnDefault {
 opacity: 0 !important;
@@ -93,8 +121,8 @@ opacity: 0 !important;
 <div class="textos centrado-vertical">
   <p class="epigrafe-capitulo">Capítulo 1: Kilela Balanda</p>
   <h1 class="titulo-capitulo">Un conjuro para que brote el mito</h1>
-  <!--<button class="boton-accion" id="boton-reproduccion" onclick="controlReproduccion()">Pausar vídeo</button>-->
-  <button class="boton-accion" id="boton-sonido" onclick="controlSonido()">Activar sonido</button>
+  <button class="boton-accion" id="boton-reproduccion" onclick="controlReproduccion()"><div class="pausar-video"></div></button>
+  <button class="boton-accion" id="boton-sonido" onclick="controlSonido()"><div class="activar-sonido"></div></button>
 </div>
 </div>
 </div>
@@ -114,20 +142,20 @@ var btnSonido = document.getElementById("boton-sonido");
 function controlReproduccion() {
   if (video.paused) {
     video.play();
-    btnReproduccion.innerHTML = "Pausar vídeo";
+    btnReproduccion.innerHTML = '<div class="pausar-video" title="Pausar vídeo" alt="Pausar vídeo"></div>';
   } else {
     video.pause();
-    btnReproduccion.innerHTML = "Reproducir vídeo";
+    btnReproduccion.innerHTML = '<div class="reproducir-video" title="Reproducir vídeo" alt="Reproducir vídeo"></div>';
   }
 }
     // Activa y desactiva el sonido y cambia el texto del botón
 function controlSonido() {
   if (video.muted===true) {
     video.muted=false;
-    btnSonido.innerHTML = "Desactivar sonido";
+    btnSonido.innerHTML = '<div class="desactivar-sonido" title="Desactivar sonido" alt="Desactivar sonido"></div>';
   } else {
     video.muted=true;
-    btnSonido.innerHTML = "Activar sonido";
+    btnSonido.innerHTML = '<div class="activar-sonido" title="Activar sonido" alt="Activar sonido"></div>';
   }
 }
 </script>
